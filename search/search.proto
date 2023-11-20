@@ -1,0 +1,30 @@
+syntax = "proto3";
+option go_package = "ryo29wx/caolila_interfaces/search";
+
+package search;
+
+service Searcher {
+  rpc Search (SearchRequest) returns (SearchResponse) {}
+}
+
+message SearchRequest {
+  string query = 1;
+  int32 sort = 2;
+  string token = 3;
+}
+
+message SearchResponse {
+    repeated ResponseResult responses = 1;
+    int32 total_num = 2;
+}
+
+message ResponseResult {
+    string user_id = 1;
+    string nick_name = 2;
+    int32 sex = 3;
+    string title = 4;
+    string company = 5;
+    bool like = 6;
+    string image_url = 7;
+    string last_login = 8;
+}
