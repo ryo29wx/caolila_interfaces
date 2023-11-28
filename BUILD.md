@@ -1,6 +1,7 @@
 # How to build gRPC file
 see: https://grpc.io/docs/languages/go/quickstart/
 
+### Go
 ```
 $ pwd
 .../caolila_interfaces/module
@@ -8,12 +9,27 @@ $ export PATH="$PATH:$(go env GOPATH)/bin"
 $ protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative <Protocol Buffer file>.proto
 ```
 
-## Requirements
+### Python
+```python
+$ pwd
+.../caolila_interfaces/module
+
+$ python3 -m grpc_tools.protoc -I . --python_out=. --pyi_out=. --grpc_python_out=. ./recommend.proto 
 ```
+
+
+## Requirements
+```go
 $ go version
 go version go1.19.2 darwin/amd64
 $ protoc --version
 libprotoc 3.21.12
+```
+
+```python
+$ python3 -V
+Python 3.7.3
+
 ```
 
 ## Tips
